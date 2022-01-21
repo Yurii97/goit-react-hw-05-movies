@@ -5,7 +5,7 @@ import Movies from './components/Movies/Movies';
 import Home from './components/Home/Home';
 import Cast from './components/Cast/Cast';
 import Reviews from './components/Reviews/Reviews';
-import MoviesItem from './components/MoviesItem/MoviesItem';
+import MovieDetailsPage from './components/MovieDetailsPage/MovieDetailsPage';
 
 function App() {
   return (
@@ -13,7 +13,7 @@ function App() {
       <Route path="/" element={<HomePage />}>
         <Route index element={<Home />}></Route>
         <Route path="movies" element={<Movies />}>
-          <Route path=":id" element={<MoviesItem />}>
+          <Route path=":id" element={<MovieDetailsPage />}>
             <Route path="cast" element={<Cast />} />
             <Route path="reviews" element={<Reviews />} />
           </Route>
