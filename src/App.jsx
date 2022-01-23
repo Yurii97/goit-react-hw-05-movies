@@ -13,22 +13,21 @@ import Movies from './components/Movies/Movies';
 function App() {
   return (
     <>
-    <Routes>
-      <Route path="/" element={<HomePage />}>
-        <Route index element={<Home />}></Route>
-        <Route path="movies" element={<Movies />}>
-          <Route index element={ <MoviesPage />}/>
-          <Route path=":id" element={<MovieDetailsPage />}>
-            <Route path="cast" element={<Cast />} />
-            <Route path="reviews" element={<Reviews />} />
+      <Routes>
+        <Route path="/" element={<HomePage />}>
+          <Route index element={<Home />}></Route>
+          <Route path="movies" element={<Movies />}>
+            <Route index element={<MoviesPage />} />
+            <Route path=":id" element={<MovieDetailsPage />}>
+              <Route path="cast" element={<Cast />} />
+              <Route path="rewiews" element={<Reviews />} />
+            </Route>
           </Route>
         </Route>
-      </Route>
-    </Routes>
-    <>
-      <ToastContainer />
-      
-    </>
+      </Routes>
+      <>
+        <ToastContainer />
+      </>
     </>
   );
 }
