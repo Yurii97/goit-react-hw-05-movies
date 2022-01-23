@@ -1,6 +1,7 @@
 import MovieList from '../MovieList/MovieList';
-import { FetchTopMovie } from '../../service/MovieApi';
+import API  from '../../service/MovieApi';
 import { useEffect, useState } from 'react';
+import {toast} from 'react-toastify'
 
 function Home() {
 
@@ -11,8 +12,11 @@ function Home() {
 },[])
 
   const requestFetch = () => {
-  FetchTopMovie().then(data=>{
-    setMovieList([...data.results])
+  API.FetchTopMovie().then(data=>{
+    setMovieList([...data.results]).catch(er => {        
+        toast.error(er);
+      })
+      .finally(() => null);
   })
   }
   

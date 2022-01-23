@@ -1,5 +1,7 @@
+import { Outlet } from "react-router-dom";
+
 function Movies() {
-  return <div>Movies</div>;
+  return <Outlet/>  
 }
 
 export default Movies;
