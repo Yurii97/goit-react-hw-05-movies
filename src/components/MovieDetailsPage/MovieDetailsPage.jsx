@@ -1,8 +1,7 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useParams, useNavigate, Outlet } from 'react-router-dom';
 import API from '../../service/MovieApi';
 import { toast } from 'react-toastify';
-import { useEffect } from 'react/cjs/react.development';
 import Spiner from '../Spiner/Spiner';
 import s from './MovieDetailsPage.module.css'
 
