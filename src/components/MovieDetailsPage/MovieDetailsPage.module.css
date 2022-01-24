@@ -1,0 +1,21 @@
+
+.container{
+    margin-top: 15px;    
+}
+
+.description{
+    display: flex;
+    border-bottom: 1px solid gray;
+}
+.description__img{    
+margin-top: 10px;    
+}
+.description__text{
+    margin-left: 10px;
+}
+.additionalInfo{
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid gray;
+    padding-bottom: 10px;
+}

@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 
 function MovieList({ movieList }) {
-  console.log(movieList);
   return (
     <ul>
       {movieList.map(movie => (

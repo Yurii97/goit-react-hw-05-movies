@@ -2,29 +2,29 @@ import MovieList from '../MovieList/MovieList';
 import API from '../../service/MovieApi';
 import { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
+import Spiner from '../Spiner/Spiner'
 
 function Home() {
   const [movieList, setMovieList] = useState([]);
-
+  const [loading, setLoading] = useState(false)
+  
   useEffect(() => {
-    requestFetch();
-  }, []);
-
-  const requestFetch = () => {
+    setLoading(true)
     API.FetchTopMovie()
       .then(data => {
-        console.log(data);
+        
         setMovieList([...data.results]);
       })
       .catch(er => {
         toast.error(er);
       })
-      .finally(() => null);
-  };
+      .finally(() => setLoading(false));    
+  }, []);  
 
   return (
     <div>
       <h2>Trending today</h2>
+      {loading && <Spiner/>}
       {movieList.length > 0 && <MovieList movieList={movieList} />}
     </div>
   );
