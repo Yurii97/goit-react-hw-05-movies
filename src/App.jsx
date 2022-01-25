@@ -1,5 +1,5 @@
 import './App.css';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { lazy, Suspense } from 'react';
@@ -12,7 +12,6 @@ const LazyMoviesPage = lazy(()=>import('./components/MoviesPage/MoviesPage'))
 const LazyMovieDetailsPage =lazy(()=>import('./components/MovieDetailsPage/MovieDetailsPage'))
 const LazyCast = lazy(() => import('./components/Cast/Cast'))
 const LazyReviews = lazy(() => import('./components/Reviews/Reviews'))
-const LazyNotFound = lazy(() => import('./components/NotFound/NotFound'))
 
 function App() {
  
@@ -30,7 +29,7 @@ function App() {
             </Route>
           </Route>
         </Route>
-        <Route path="*" element={<LazyNotFound/>}/>
+        <Route path="*" element={<Navigate to="/" />}/>
       </Routes>
           </Suspense>
       <>
