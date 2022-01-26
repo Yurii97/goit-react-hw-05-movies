@@ -1,18 +1,22 @@
 import { useState, useEffect } from 'react';
-import { Link, useParams, useNavigate, Outlet } from 'react-router-dom';
+import { Link, useParams, useNavigate, Outlet, useLocation } from 'react-router-dom';
 import API from '../../service/MovieApi';
 import { toast } from 'react-toastify';
-import Spiner from '../Spiner/Spiner';
+import Spiner from '../../components/Spiner/Spiner';
 import s from './MovieDetailsPage.module.css'
 
 function MovieDetailsPage() {
   const [data, setData] = useState({});
-  const [loading, setLoading]=useState(false)
+  const [loading, setLoading] = useState(false);
+  const [fromPage, setFromPage]=useState(null)
   const { id } = useParams();
+
   const navigate = useNavigate();
+  const location = useLocation()
   const noImgSrc= 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/256px-No-Image-Placeholder.svg.png'
 
   useEffect(() => {
+    setFromPage(location.state?.from || '/')
     setLoading(true)
     API.FetchIdMovie(id)
       .then(data => {
@@ -25,7 +29,7 @@ function MovieDetailsPage() {
   }, [id]);
     
   const handleClick = () => {
-    navigate(-1);
+    navigate(fromPage);
   };
 
   return (<>
@@ -66,7 +70,7 @@ function MovieDetailsPage() {
         </div>
         <Outlet />
       </div>)}
-   </>)
+  </>)
 }
 
 export default MovieDetailsPage;

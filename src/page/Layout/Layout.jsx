@@ -1,7 +1,7 @@
 import { NavLink, Outlet } from 'react-router-dom';
-import s from './HomePage.module.css'
+import s from './Layout.module.css'
 
-function HomePage() {
+function Layout() {
   return (
     <div className={s.container}>
       <nav className={s.navigation}>
@@ -13,4 +13,4 @@ function HomePage() {
   );
 }
 
-export default HomePage;
+export default Layout;

@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import { toast } from 'react-toastify';
-import MovieList from '../MovieList/MovieList';
+import MovieList from '../../components/MovieList/MovieList';
 import API from '../../service/MovieApi';
-import Spiner from '../Spiner/Spiner';
+import Spiner from '../../components/Spiner/Spiner';
 import { Outlet, useSearchParams } from 'react-router-dom';
 
 function MoviesPage() {

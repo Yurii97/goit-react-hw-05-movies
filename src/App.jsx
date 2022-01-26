@@ -4,12 +4,12 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { lazy, Suspense } from 'react';
 import Spiner from './components/Spiner/Spiner';
-import HomePage from './components/HomePage/HomePage'
+import Layout from './page/Layout/Layout'
 import Home from './components/Home/Home'
 
 const LazyMovies = lazy(()=>import('./components/Movies/Movies'))
-const LazyMoviesPage = lazy(()=>import('./components/MoviesPage/MoviesPage'))
-const LazyMovieDetailsPage =lazy(()=>import('./components/MovieDetailsPage/MovieDetailsPage'))
+const LazyMoviesPage = lazy(()=>import('./page/MoviesPage/MoviesPage'))
+const LazyMovieDetailsPage =lazy(()=>import('./page/MovieDetailsPage/MovieDetailsPage'))
 const LazyCast = lazy(() => import('./components/Cast/Cast'))
 const LazyReviews = lazy(() => import('./components/Reviews/Reviews'))
 
@@ -19,7 +19,7 @@ function App() {
     <>
           <Suspense fallback={<Spiner/>}>
       <Routes>
-        <Route path="/" element={<HomePage/>}>
+        <Route path="/" element={<Layout/>}>
           <Route index element={<Home/>}/>
           <Route path="movies" element={<LazyMovies/>}>
             <Route index element={<LazyMoviesPage />} />
