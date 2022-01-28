@@ -1,8 +1,8 @@
-import MovieList from '../MovieList/MovieList';
+import MovieList from '../../components/MovieList/MovieList';
 import API from '../../service/MovieApi';
 import { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
-import Spiner from '../Spiner/Spiner'
+import Spiner from '../../components/Spiner/Spiner'
 
 function Home() {
   const [movieList, setMovieList] = useState([]);

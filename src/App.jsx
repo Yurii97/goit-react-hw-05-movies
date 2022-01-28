@@ -4,8 +4,8 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { lazy, Suspense } from 'react';
 import Spiner from './components/Spiner/Spiner';
-import Layout from './page/Layout/Layout'
-import Home from './components/Home/Home'
+import Layout from './components/Layout/Layout';
+import Home from './page/Home/Home';
 
 const LazyMovies = lazy(()=>import('./components/Movies/Movies'))
 const LazyMoviesPage = lazy(()=>import('./page/MoviesPage/MoviesPage'))
